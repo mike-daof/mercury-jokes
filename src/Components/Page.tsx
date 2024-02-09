@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 const Page = styled.div`
   width: 100%;
@@ -6,6 +6,6 @@ const Page = styled.div`
   @media (max-width: 800px) {
     padding: 20px;
   }
-`;
+`
 
-export default Page;
+export default Page

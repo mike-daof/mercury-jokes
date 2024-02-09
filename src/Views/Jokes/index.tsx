@@ -1,22 +1,22 @@
-import { useCallback, useState } from "react";
-import { Stack, Divider, Button, Box, Link, Typography } from "@mui/material";
+import {useCallback, useState} from 'react'
+import {Stack, Divider, Button, Box, Link, Typography} from '@mui/material'
 
-import { useJokes } from "../../Services/Jokes/hooks";
-import Page from "../../Components/Page";
-import JokeQuestionAnswer from "./Components/JokeQuestionAnswer";
+import {useJokes} from '../../Services/Jokes/hooks'
+import Page from '../../Components/Page'
+import JokeQuestionAnswer from './Components/JokeQuestionAnswer'
 
 export default function Jokes() {
-  const [showAnswer, setShowAnswer] = useState(false);
-  const { data, isError, isLoading, refetch } = useJokes();
+  const [showAnswer, setShowAnswer] = useState(false)
+  const {data, isError, isLoading, refetch} = useJokes()
 
   const onClickJoke = useCallback(() => {
-    setShowAnswer(false);
-    refetch();
-  }, [refetch]);
+    setShowAnswer(false)
+    refetch()
+  }, [refetch])
 
   const onClickShowAnswer = useCallback(() => {
-    setShowAnswer(showAnswer => !showAnswer);
-  }, []);
+    setShowAnswer(showAnswer => !showAnswer)
+  }, [])
 
   const renderResults = () => {
     if (isError) {
@@ -24,19 +24,19 @@ export default function Jokes() {
         <Box className="w-full h-56 flex items-center justify-center">
           <Typography className="text-red-500 uppercase">There was an error loading your joke.</Typography>
         </Box>
-      );
+      )
     }
     if (isLoading) {
       return (
         <Box className="w-full h-56 flex items-center justify-center">
           <Typography className="uppercase">Loading your joke.</Typography>
         </Box>
-      );
+      )
     }
     if (data) {
-      return <JokeQuestionAnswer joke={data} showAnswer={showAnswer} onClick={onClickShowAnswer} />;
+      return <JokeQuestionAnswer joke={data} showAnswer={showAnswer} onClick={onClickShowAnswer} />
     }
-  };
+  }
 
   return (
     <Page>
@@ -52,5 +52,5 @@ export default function Jokes() {
         <Box>{renderResults()}</Box>
       </Stack>
     </Page>
-  );
+  )
 }

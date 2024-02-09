@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
+import {useQuery} from '@tanstack/react-query'
 
-import { fetchJokeRandom } from "./api";
+import {fetchJokeRandom} from './api'
 
 export const useJokes = () => {
   return useQuery({
-    queryKey: ["jokes"],
+    queryKey: ['jokes'],
     queryFn: fetchJokeRandom,
     retry: false,
-  });
-};
+  })
+}
