@@ -18,7 +18,7 @@ export default function JokeQuestionAnswer({joke, showAnswer, onClick}: JokeQues
         <Typography className="capitalize">{showAnswer ? 'Hide punchline' : 'Show punchline'}</Typography>
       </Button>
       {showAnswer && (
-        <Box className="transition duration-700 ease-in-out w-full">
+        <Box className="w-full">
           <Quotes direction="right" message={joke.punchLine} />
         </Box>
       )}
