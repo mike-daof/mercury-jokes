@@ -5,6 +5,6 @@ export interface JokeRandomData {
 }
 
 export const fetchJokeRandom = async (): Promise<JokeRandomData> => {
-  const response = await fetch('https://mwks-joke-service.azurewebsites.net/api/joke/random');
-  return response.json()
-}
+  const response = await fetch("https://mwks-joke-service.azurewebsites.net/api/joke/random");
+  return response.json();
+};
